@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Novo Chamado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header><h1>Novo Chamado</h1></header>
+  <div class="container">
+    <form id="ticket-form">
+      <label>Título:</label><br>
+      <input type="text" id="titulo" required><br><br>
+
+      <label>Descrição:</label><br>
+      <textarea id="descricao"></textarea><br><br>
+
+      <label>Prioridade:</label><br>
+      <select id="prioridade">
+        <option>Baixa</option>
+        <option>Média</option>
+        <option>Alta</option>
+      </select><br><br>
+
+      <label>Responsável:</label><br>
+      <input type="text" id="responsavel"><br><br>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Chamado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Detalhes do Chamado</h1>
+  <div id="ticketDetails" class="card"></div>
+  <button id="btnVoltar" class="btn">Voltar</button>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ticketId = params.get("id");
+
+    async function carregarDetalhes() {
+      const response = await fetch(`/api/tickets/${ticketId}`);
+      const ticket = await response.json();
+
+      const div = document.getElementById("ticketDetails");
+      div.innerHTML = `
+        <p><strong>ID:</strong> ${ticket.id}</p>
+        <p><strong>Usuário:</strong> ${ticket.usuario}</p>
+        <p><strong>Descrição:</strong> ${ticket.descricao}</p>
+        <p><strong>Status:</strong> ${ticket.status}</p>
+        <p><strong>Criado em:</strong> ${new Date(ticket.criadoEm).toLocaleString()}</p>
+        ${
+          ticket.status === "encerrado"
+            ? "<p style='color: red'><strong>Chamado encerrado</strong></p>"
+            : `<button id="encerrarBtn" class="btnEncerrar">Encerrar Chamado</button>`
+        }
+      `;
+
+      const encerrarBtn = document.getElementById("encerrarBtn");
+      if (encerrarBtn) {
+        encerrarBtn.addEventListener("click", encerrarChamado);
+      }
+    }
+
+    async function encerrarChamado() {
+      await fetch(`/api/tickets/${ticketId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "encerrado" })
+      });
+      alert("Chamado encerrado com sucesso!");
+      window.location.reload();
+    }
+
+    document.getElementById("btnVoltar").addEventListener("click", () => {
+      window.location.href = "dashboard.html";
+    });
+
+    carregarDetalhes();
+  </script>
+</body>
+</html>

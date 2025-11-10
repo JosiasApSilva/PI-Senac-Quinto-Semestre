@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "descricao": "formatar computador",
+    "status": "aberto",
+    "criadoEm": "2025-11-09T20:21:23.703Z"
+  },
+  {
+    "id": 2,
+    "descricao": "passsar cabo de rede do switch para a mesa 3",
+    "status": "aberto",
+    "criadoEm": "2025-11-09T20:22:17.147Z"
+  },
+  {
+    "id": 3,
+    "descricao": "limpar computador colaborador marcos",
+    "status": "aberto",
+    "criadoEm": "2025-11-09T20:25:47.288Z"
+  },
+  {
+    "id": 4,
+    "descricao": "formatar computador",
+    "status": "aberto",
+    "criadoEm": "2025-11-09T20:32:21.921Z"
+  },
+  {
+    "id": 5,
+    "usuario": "Anônimo",
+    "descricao": "formataçao da maquina 42",
+    "status": "aberto",
+    "criadoEm": "2025-11-09T20:51:01.805Z"
+  }
+]
