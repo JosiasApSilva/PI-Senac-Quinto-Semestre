@@ -6,28 +6,89 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>Novo Chamado</h1></header>
+
+  <header>
+    <h1>Novo Chamado</h1>
+  </header>
+
   <div class="container">
     <form id="ticket-form">
-      <label>Título:</label><br>
-      <input type="text" id="titulo" required><br><br>
 
-      <label>Descrição:</label><br>
-      <textarea id="descricao"></textarea><br><br>
+      <!-- Título -->
+      <div class="form-group">
+        <label for="titulo">Título do chamado *</label>
+        <input type="text" id="titulo" required placeholder="Ex: Sistema X fora do ar">
+      </div>
 
-      <label>Prioridade:</label><br>
-      <select id="prioridade">
-        <option>Baixa</option>
-        <option>Média</option>
-        <option>Alta</option>
-      </select><br><br>
+      <!-- Linha 2: Tipo + Categoria -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tipo">Tipo de chamado *</label>
+          <select id="tipo" required>
+            <option value="">Selecione...</option>
+            <option value="incidente">Incidente (falha/erro)</option>
+            <option value="requisicao">Requisição de serviço</option>
+            <option value="acesso">Acesso / Permissão</option>
+            <option value="preventiva">Manutenção preventiva</option>
+          </select>
+        </div>
 
-      <label>Responsável:</label><br>
-      <input type="text" id="responsavel"><br><br>
+        <div class="form-group">
+          <label for="categoria">Categoria *</label>
+          <select id="categoria" required>
+            <option value="">Selecione...</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software</option>
+            <option value="rede">Rede / Conectividade</option>
+            <option value="sistema_interno">Sistemas internos</option>
+            <option value="acesso_senha">Acesso / Senha</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+      </div>
 
-      <button type="submit">Salvar</button>
+      <!-- Linha 3: Prioridade + Responsável -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prioridade">Prioridade *</label>
+          <select id="prioridade" required>
+            <option value="">Selecione...</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+            <option value="critica">Crítica</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="responsavel">Responsável</label>
+          <input type="text" id="responsavel" placeholder="Ex: João da TI">
+        </div>
+      </div>
+
+      <!-- Linha 4: Solicitante -->
+      <div class="form-group">
+        <label for="solicitante">Solicitante</label>
+        <input type="text" id="solicitante" placeholder="Nome de quem abriu o chamado">
+      </div>
+
+      <!-- Linha 5: Descrição -->
+      <div class="form-group">
+        <label for="descricao">Descrição detalhada</label>
+        <textarea id="descricao" rows="4" placeholder="Descreva o problema, impacto e contexto..."></textarea>
+      </div>
+
+      <!-- Botões -->
+      <div class="form-actions">
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="window.location.href='index.html'">
+          Cancelar
+        </button>
+      </div>
+
     </form>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

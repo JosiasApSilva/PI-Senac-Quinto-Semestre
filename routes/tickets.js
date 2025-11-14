@@ -37,10 +37,20 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const tickets = readTickets();
 
+  // Gera ID seguro mesmo se um dia apagar algum no meio
+  const nextId = tickets.length > 0 ? Math.max(...tickets.map(t => t.id)) + 1 : 1;
+
   const novoTicket = {
-    id: tickets.length + 1,
-    usuario: req.body.usuario || "Usuário não informado",
-    descricao: req.body.descricao,
+    id: nextId,
+    titulo: req.body.titulo || '',
+    descricao: req.body.descricao || '',
+    tipo: req.body.tipo || '',
+    categoria: req.body.categoria || '',
+    prioridade: req.body.prioridade || 'baixa',
+    // Responsável normalmente é definido depois, então pode vir vazio
+    responsavel: req.body.responsavel || '',
+    // Quem abriu o chamado
+    solicitante: req.body.solicitante || 'Não informado',
     status: 'aberto',
     criadoEm: new Date().toISOString()
   };
@@ -61,8 +71,15 @@ router.put('/:id', (req, res) => {
     return res.status(404).json({ error: 'Ticket não encontrado' });
   }
 
-  const { status } = req.body;
-  tickets[index].status = status || tickets[index].status;
+  const { status, responsavel } = req.body;
+
+  if (status) {
+    tickets[index].status = status;
+  }
+
+  if (responsavel !== undefined) {
+    tickets[index].responsavel = responsavel;
+  }
 
   writeTickets(tickets);
   res.json(tickets[index]);

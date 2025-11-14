@@ -1,33 +1,62 @@
 [
   {
     "id": 1,
-    "descricao": "formatar computador",
-    "status": "aberto",
-    "criadoEm": "2025-11-09T20:21:23.703Z"
+    "titulo": "Sistema de vendas fora do ar",
+    "descricao": "Usuários relatam erro ao tentar acessar o módulo de vendas desde às 14h.",
+    "tipo": "incidente",
+    "categoria": "sistema_interno",
+    "prioridade": "alta",
+    "responsavel": "João da TI",
+    "solicitante": "Marcos - Comercial",
+    "status": "encerrado",
+    "criadoEm": "2025-11-15T09:32:10.000Z"
   },
   {
     "id": 2,
-    "descricao": "passsar cabo de rede do switch para a mesa 3",
-    "status": "aberto",
-    "criadoEm": "2025-11-09T20:22:17.147Z"
+    "titulo": "Instalação do Office 365",
+    "descricao": "Novo colaborador do RH precisa do pacote Office instalado na máquina.",
+    "tipo": "requisicao",
+    "categoria": "software",
+    "prioridade": "media",
+    "responsavel": "",
+    "solicitante": "Carla - RH",
+    "status": "encerrado",
+    "criadoEm": "2025-11-15T10:05:23.000Z"
   },
   {
     "id": 3,
-    "descricao": "limpar computador colaborador marcos",
+    "titulo": "Troca de cabo de rede da mesa 12",
+    "descricao": "Cabo atual está rompido e oscilando conexão.",
+    "tipo": "incidente",
+    "categoria": "rede",
+    "prioridade": "baixa",
+    "responsavel": "Pedro da Infra",
+    "solicitante": "Ana - Financeiro",
     "status": "aberto",
-    "criadoEm": "2025-11-09T20:25:47.288Z"
+    "criadoEm": "2025-11-15T11:47:50.000Z"
   },
   {
     "id": 4,
-    "descricao": "formatar computador",
+    "titulo": "Criar usuário no sistema interno",
+    "descricao": "Novo colaborador do setor precisa de acesso ao sistema interno e permissões de cadastro.",
+    "tipo": "acesso",
+    "categoria": "acesso_senha",
+    "prioridade": "media",
+    "responsavel": "",
+    "solicitante": "Júlia - Administrativo",
     "status": "aberto",
-    "criadoEm": "2025-11-09T20:32:21.921Z"
+    "criadoEm": "2025-11-15T12:15:09.000Z"
   },
   {
     "id": 5,
-    "usuario": "Anônimo",
-    "descricao": "formataçao da maquina 42",
+    "titulo": "Manutenção preventiva em 5 computadores",
+    "descricao": "Limpeza, atualização e revisão em máquinas do setor jurídico.",
+    "tipo": "preventiva",
+    "categoria": "hardware",
+    "prioridade": "baixa",
+    "responsavel": "Tiago",
+    "solicitante": "Gabriela - Jurídico",
     "status": "aberto",
-    "criadoEm": "2025-11-09T20:51:01.805Z"
+    "criadoEm": "2025-11-15T14:02:41.000Z"
   }
 ]

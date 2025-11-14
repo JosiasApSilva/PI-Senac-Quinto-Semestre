@@ -6,19 +6,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>Chamados Abertos</h1></header>
+  <header>
+    <h1>Chamados Abertos</h1>
+  </header>
+
   <div class="container">
     <button onclick="window.location.href='create.html'">Novo Chamado</button>
-    <table border="1" width="100%" style="margin-top:20px;">
+
+    <table>
       <thead>
-        <tr><th>ID</th><th>Título</th><th>Status</th><th>Ações</th></tr>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Tipo</th>
+          <th>Categoria</th>
+          <th>Prioridade</th>
+          <th>Solicitante</th>
+          <th>Responsável</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
       </thead>
       <tbody id="ticket-list"></tbody>
     </table>
+    
   </div>
+
   <script src="script.js"></script>
-
-
-
 </body>
 </html>
