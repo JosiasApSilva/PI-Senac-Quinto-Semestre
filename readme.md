@@ -50,16 +50,19 @@ Verifique a instalação:
 ```bash
 node -v
 npm -v
-
+```
 ### 2 Instalar Dependências
 No terminal, dentro da pasta do projeto:
 
-bash
+```bash
 npm install
+```
 
 ### 3 Executar o Projeto
+```
 bash
 npm start
+```
 Acesse no navegador:
 http://localhost:3000
 
@@ -69,3 +72,4 @@ Cintia Simoni
 Sandra Larissa Marques Couto
 Newton Silvestre de Mello
 Marcos Vinicius Araújo Santana
+
